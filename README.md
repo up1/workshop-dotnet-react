@@ -30,4 +30,33 @@ demo-dotnet-react-backend-1   "dotnet src.dll"    backend             running
 ```
 
 Access to APIs
-* Call API :: https://localhost:9999/WeatherForecast
+* Call API :: http://localhost:9999/WeatherForecast
+
+## Frontent with [ReactJS](https://reactjs.org/)
+* [NodeJS](https://nodejs.org/en/)
+```
+$cd frontend
+$npm install
+$npm run dev
+```
+
+Access with url = http://localhost:5173/
+
+### Build with production
+```
+$npm run build
+```
+
+Deploy files and folders `./dist` to web server such as [NGINX](https://hub.docker.com/_/nginx)
+
+### Running ReactJS with Docker
+```
+$docker-compose build frontend
+$docker-compose up -d frontend
+$docker-compose ps
+
+NAME                          COMMAND             SERVICE             STATUS              PORTS
+demo-dotnet-react-backend-1   "dotnet src.dll"    backend             running
+```
+
+Access with url = http://localhost:8888
