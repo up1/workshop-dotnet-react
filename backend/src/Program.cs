@@ -17,6 +17,8 @@ builder.Services.AddCors(options =>
                       });
 });
 
+builder.Services.AddHealthChecks();
+
 
 var app = builder.Build();
 
@@ -34,6 +36,8 @@ app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHealthChecks("/healthz");
 
 app.Run();
 
